@@ -1,0 +1,15 @@
+
+public class Persoon {
+	public static void main(String[] args) {
+		Auto auto = new Auto();
+		//setters overgenomen van Vervoermiddel-klasse
+		auto.setMerk("Sidian");
+		auto.setType("S350d");
+		auto.setKleur("selenitgrau metallic");
+		//setters van Auto-klasse
+		auto.setWeight(1875);
+		auto.setTax(570.00);
+		System.out.println("De wegenbelasting bedraagt "+
+		 mijnKar.getTax()+" euro per maand");
+		}
+}

@@ -1,0 +1,69 @@
+import java.util.Random;
+
+	public class EindOpdracht {
+
+	    public static void main(String[] args) {
+
+	    //de layout, in dit geval 10 bij 10
+	        final int rowWidth = Integer.parseInt(args[0]);
+	        final int colHeight = Integer.parseInt(args[1]);
+
+	        double[] aGem = new double[rowWidth];
+
+	        Random rand = new Random();
+
+	        int [][] board = new int [rowWidth][colHeight+1];
+
+	        //invullen van de 2D array
+	        for (int row = 0; row < board.length; row++) {
+
+	            System.out.println("rij " + row + " collengte=" + board[row].length );
+
+	            for (int col = 0; col < (board[row].length-1); col++) { //nb laatste kolom vullen we met gemiddelde
+
+	                board[row][col] = rand.nextInt(100);
+	            }
+	        }
+	        //gemiddelde berekenen per regel: som per regel / aantal per regel:
+	        double Som = 0;
+	        System.out.println(board[0][0]);
+	        System.out.println(board[0][1]);
+	        System.out.println(board[0][2]);
+	        System.out.println(board[0][3]);
+	        System.out.println(board[0][4]);
+	        System.out.println("======================");
+	        for (int u = 0; u<(board[0].length-1); u++) {
+	            Som = Som + board[0][u];
+	        }
+
+	        double gemiddelde = Som/(board[0].length-1);
+	        System.out.println("som rij 0 " + Som);
+	        System.out.println("gemiddelde rij 0 " + gemiddelde);
+	        /**
+	         *
+	         *
+	         *
+	         */
+	        aGem[0]=gemiddelde;
+	        System.out.println(aGem[0]);
+	        //board[0][4] = Integer.parseInt(); //let op dit moet eigenlijk een double zijn
+	        System.out.println(board[0][4]); //gemiddelde
+
+
+
+
+
+	        //printen van de tabel
+	        System.out.println("........................");
+	        for(int i = 0; i < board.length; i++) {
+
+	            for(int j = 0; j < board[i].length; j++) {
+	                System.out.print(" " + board[i][j] + " ");
+	            }
+	            System.out.println();
+	        }
+
+	    }
+
+	}
+
